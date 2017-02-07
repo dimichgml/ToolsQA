@@ -9,7 +9,7 @@ using System.Linq;
 namespace ToolsQA.LiteCart
 {
     [TestFixture]
-    class AuthorizationTest
+    class AdminTest
     {
         private IWebDriver _driver;
         private WebDriverWait _wait;

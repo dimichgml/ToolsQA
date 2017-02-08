@@ -66,6 +66,7 @@
   </Choose>
   <ItemGroup>
     <Compile Include="LiteCart\AdminTest.cs" />
+    <Compile Include="LiteCart\StickerTest.cs" />
     <Compile Include="NUnitTest.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

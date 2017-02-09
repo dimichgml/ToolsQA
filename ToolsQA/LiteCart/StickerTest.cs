@@ -36,9 +36,10 @@ namespace ToolsQA.LiteCart
             GoToURL("http://localhost/litecart/en/");
             List<IWebElement> _items;
             List<IWebElement> _stickers;
-            _items = _driver.FindElements(By.CssSelector("ul.listing-wrapper.products > li")).ToList();
+            _items = _driver.FindElements(By.CssSelector("ul.listing-wrapper.products > li")).ToList();            
             for (int i = 0; i < _items.Count; i++)
             {
+                Assert.False(!IsElementExists(By.CssSelector("div > div.sticker")), "No sticker for goods from this location (X,Y): " + _items[i].Location.X.ToString() + ", " + _items[i].Location.Y.ToString());
                 _stickers = _items[i].FindElements(By.CssSelector("div > div.sticker")).ToList();
                 Assert.False(_stickers.Count > 1, "More than one sticker per item this location (X,Y): " + _items[i].Location.X.ToString() + ", " + _items[i].Location.Y.ToString());
             }

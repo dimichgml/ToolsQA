@@ -53,7 +53,7 @@ namespace ToolsQA.LiteCart
             {
                 _countries.Add(_item.GetAttribute("textContent").ToString());    
             }
-            Assert.False(!IsSort(_countries), "List contries sort by Z-A");
+            Assert.False(!IsSort(_countries), "List countries sort by Z-A");
         }
         [Test]
         public void SortCountryCheckWithGeoZon()
@@ -92,7 +92,7 @@ namespace ToolsQA.LiteCart
                 {
                     _geocountries.Add(_geozone.GetAttribute("textContent").ToString());
                 }
-                Assert.False(!IsSort(_geocountries), "List contries sort by Z-A");
+                Assert.False(!IsSort(_geocountries), "List countries sort by Z-A");
             }
 
         }
@@ -136,7 +136,7 @@ namespace ToolsQA.LiteCart
                         }
                     }
                 }
-                Assert.False(!IsSort(_selection), "List contries sort by Z-A");               
+                Assert.False(!IsSort(_selection), "List countries sort by Z-A");               
             }           
         }
 

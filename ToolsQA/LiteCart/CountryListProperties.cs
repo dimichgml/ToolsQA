@@ -102,13 +102,13 @@ namespace ToolsQA.LiteCart
         {
             /*
              * Выполняем поиск ссылок на страницы геозон стран. Переходим на эти страницы в цикле. Находим все комбобоксы на странице. Для каждого комбобокса
-             * проверяем свойство выбранного элемента. Записываем этот элмент в список. По окончанию сбора данных выбранных списков выполняем проверку 
-             * выборки сортировки в алфавитном порядке.
+             * в свойствах находим индекс выбранного элемента selectedIndex. По номеру выбранного элемента получаем его текстконтент и записываем в общую выборку стран, выбранных в комбобоксах.
+             * Далее аналогично тестовым методам выше проверяем сортировку.
              */
             TestAuthorization();
             List<IWebElement> _countries;
             List<IWebElement> _comboboxes;
-            List<IWebElement> _options;
+            IWebElement _option;
             List<string> _links;
             List<string> _selection;
             _links = new List<string>();
@@ -126,15 +126,10 @@ namespace ToolsQA.LiteCart
                 _comboboxes = _driver.FindElements(By.CssSelector("td:nth-child(3) > select")).ToList();                
                 foreach (var _combobox in _comboboxes)
                 {
-                    _options = null;
-                    _options = _combobox.FindElements(By.CssSelector("option")).ToList();
-                    foreach (var _option in _options)
-                    {                       
-                        if (Convert.ToBoolean(_option.GetAttribute("selected")))
-                        {                            
-                            _selection.Add(_option.GetAttribute("textContent").ToString());
-                        }
-                    }
+
+                    int j = Int32.Parse(_combobox.GetAttribute("selectedIndex").ToString()) + 1;                    
+                    _option = _combobox.FindElement(By.CssSelector("option:nth-child("+ j.ToString() + ")"));                                              
+                    _selection.Add(_option.GetAttribute("textContent").ToString());
                 }
                 Assert.False(!IsSort(_selection), "List countries sort by Z-A");               
             }           

@@ -65,6 +65,7 @@
     </Otherwise>
   </Choose>
   <ItemGroup>
+    <Compile Include="LiteCart\AddProductToCatalog.cs" />
     <Compile Include="LiteCart\AdminTest.cs" />
     <Compile Include="LiteCart\CampaignGoodsTest.cs" />
     <Compile Include="LiteCart\CountryListProperties.cs" />
@@ -75,6 +76,9 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Images\0180801_PE332785_S5.JPG" />
   </ItemGroup>
   <Choose>
     <When Condition="'$(VisualStudioVersion)' == '10.0' And '$(IsCodedUITest)' == 'True'">

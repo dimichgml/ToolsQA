@@ -36,7 +36,7 @@ namespace ToolsQA.LiteCart
         }
 
         [Test]
-        public void AddToCart()
+        public void AddToCartAndDelete()
         {
             /*
              * Счётчик не пропадает. Его id до добавления товара и после добавления товара один и тот же. Меняется только свойство textContent.
@@ -63,8 +63,8 @@ namespace ToolsQA.LiteCart
                 _quantity = _driver.FindElement(By.CssSelector("span.quantity"));
                 amount = Int32.Parse(_quantity.GetAttribute("textContent").ToString());
                 wait.Until(ExpectedConditions.TextToBePresentInElement(_quantity, (amount + 1).ToString()));
-                amount2 = Int32.Parse(_quantity.GetAttribute("textContent").ToString());
-                Assert.False(amount == amount2, "Ooops");
+                //amount2 = Int32.Parse(_quantity.GetAttribute("textContent").ToString());
+                //Assert.False(amount == amount2, "Ooops");
                 _driver.FindElement(By.CssSelector("#logotype-wrapper")).Click();                
             }
             _driver.FindElement(By.CssSelector("#cart > a.link")).Click();

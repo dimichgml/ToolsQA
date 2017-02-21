@@ -65,6 +65,7 @@
     </Otherwise>
   </Choose>
   <ItemGroup>
+    <Compile Include="LiteCart\CountriesLinksTest.cs" />
     <Compile Include="LiteCart\AddProductToCatalog.cs" />
     <Compile Include="LiteCart\AdminTest.cs" />
     <Compile Include="LiteCart\CampaignGoodsTest.cs" />

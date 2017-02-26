@@ -70,6 +70,7 @@
     <Compile Include="LiteCart\AdminTest.cs" />
     <Compile Include="LiteCart\CampaignGoodsTest.cs" />
     <Compile Include="LiteCart\CountryListProperties.cs" />
+    <Compile Include="LiteCart\Logging.cs" />
     <Compile Include="LiteCart\ShoppingCartTest.cs" />
     <Compile Include="LiteCart\SignUpTest.cs" />
     <Compile Include="LiteCart\StickerTest.cs" />
